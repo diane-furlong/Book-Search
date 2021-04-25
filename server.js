@@ -1,8 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const routes = require('routes')
+const routes = require('./routes/bookAPI/bookRoute')
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3001
 
 //middleware
 app.use(express.urlencoded({ extended: true }))
@@ -19,5 +19,5 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/booksearch')
 
 //start server
 app.listen(PORT, function() {
-    console.log(`Running on https://localhost:3000`)
+    console.log(`Running on https://localhost:3001`)
 })
